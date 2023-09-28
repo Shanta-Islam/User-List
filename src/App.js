@@ -13,7 +13,6 @@ function App() {
       children: [
         {
           path: '/',
-          loader: ()=> fetch('https://jsonplaceholder.typicode.com/users'),
           element: <Home></Home>
         },
         {
@@ -22,9 +21,6 @@ function App() {
         },
         {
           path: '/users/:userId',
-          loader: async ({ params }) => {
-            return fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
-          },
           element: <UserDetails></UserDetails>
         }
       ]
